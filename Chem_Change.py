@@ -1,4 +1,4 @@
-# import pygetwindow as gw
+import pygetwindow as gw
 
 WIINGS = input("Copy and paste the WIINGS order #: ")
 num_of_lines = int(input("How many lines are you changing?: "))
@@ -36,6 +36,7 @@ while True:
                     }
 
                     print(information)
+                    break
 
                 elif COAT_TOOL == 'RCT03' or COAT_TOOL == 'RCT05' or COAT_TOOL == 'GCT01':
                     CHEM_LINE = input("Which line are you changing: ")
@@ -126,7 +127,7 @@ def get_Workstream():
     win.activate()
 
 
-#tool_prompt()
+tool_prompt()
 
 if __name__ == '__main__':
     pass
