@@ -83,7 +83,7 @@ while True:
                     print('Invalid Tool; please enter a valid tool')
 
     except ValueError:
-        print('Invalid Tool; please enter a valid tool')
+        print('Invalid Response: ')
         continue
 
     else:
@@ -92,6 +92,32 @@ while True:
 
 def prompt_script():
     TOOL, CHEMICAL_LINE, BATCH_NUMBER, EXPIRATION_DATE, WIINGS_NUMBER, BUDDY_NAME, BOTTLE_FROM_WARMING_SHELF, BOTTLE_NAME = tool_prompt().values()
+
+    LEVELS_TYPE = ['PARTIAL', 'NEAR EMPTY', 'EMPTY']
+
+    while True:
+        LEVELS = input("What was the level of the bottle you changed?: ")
+        LEVELS = LEVELS.upper()
+        if LEVELS in LEVELS_TYPE:
+            LEVELS = LEVELS
+            break
+        else:
+            print("Invalid chemical levels: Please use: " f"{LEVELS_TYPE}")
+
+    if num_of_lines > 1:
+        print(
+            f"WIINGS: {WIINGS_NUMBER} \n "
+            f"BUDDY: {BUDDY_NAME} \n "
+            f"\n "
+            f"\n "
+            f" {CHEMICAL_LINE} REPLACED {LEVELS} BOTTLE WITH BOTTLE FROM WARMING SHELF \n  "
+            f"\n "
+            f"{BOTTLE_NAME} \n "
+            f"BATCH: {BATCH_NUMBER} \n "
+            f"EXP DATE: {EXPIRATION_DATE} \n "
+            f"\n "
+            f"KT "
+        )
 
     if TOOL == 'ACT01' or TOOL == 'CCT01':
         print(
